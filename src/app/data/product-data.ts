@@ -12,7 +12,7 @@ export class ProductData {
       {id: 5, name: "Jar", price: 10},
       {id: 6, name: "Cactus", price: 5},
       {id: 7, name: "Case", price: 542},
-      {id: 7, name: "Mobile", price: 95}
+      {id: 8, name: "Mobile", price: 95}
     ]
   }
 

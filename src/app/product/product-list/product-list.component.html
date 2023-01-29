@@ -1,7 +1,7 @@
 <h1>Product List:</h1>
-<li *ngFor="let product of products">
-  <app-product-item [product]="product"></app-product-item>
-  <a href="#" [routerLink]="['/product/item', product.id]">Visit</a>
-  <button (click)="onAdd(product)">Add</button>
-  <button (click)="onRemove(product)" *ngIf="basket.countOfProduct(product) > 0">Remove</button>
-</li>
+<ol>
+  <li *ngFor="let product of products">
+    <app-product-item [product]="product"></app-product-item>
+    <a href="#" [routerLink]="['/product/item', product.id]">Visit</a>
+  </li>
+</ol>

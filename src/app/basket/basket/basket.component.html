@@ -1,4 +1,7 @@
-<ul>
-  <li *ngFor="let item of basket.items">{{item.product.name}} - {{item.count}} * {{item.price}}</li>
-</ul>
+<ol>
+  <li *ngFor="let item of basket.items">
+    {{item.product.name}} - {{item.count}} * {{item.price}}
+    <hr>
+  </li>
+</ol>
 <h3>Sum: {{sum}}</h3>

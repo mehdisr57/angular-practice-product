@@ -10,7 +10,7 @@ export class BasketService {
 
   private KEY = "BASKET_KEY";
   private readonly basket: Basket;
-  subject: Subject<Basket> = new Subject<Basket>();
+  private _subject: Subject<Basket> = new Subject<Basket>();
 
   constructor() {
     let session = sessionStorage.getItem(this.KEY);
@@ -23,12 +23,16 @@ export class BasketService {
     } else {
       this.basket = JSON.parse(session);
     }
-    this.subject.next(this.basket);
+    this._subject.next(this.basket);
+  }
+
+  get subject(): Subject<Basket> {
+    return this._subject;
   }
 
   private updateSession(): void {
     sessionStorage.setItem(this.KEY, JSON.stringify(this.get()));
-    this.subject.next(this.basket);
+    this._subject.next(this.basket);
   }
 
   get(): Basket {

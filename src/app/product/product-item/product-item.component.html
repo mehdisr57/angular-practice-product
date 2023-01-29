@@ -7,7 +7,10 @@
     </tr>
     <tr>
       <td><span>{{product.price}}</span></td>
-      <td><span>buttons</span></td>
+      <td>
+        <button (click)="onAdd(product)">Add</button>
+        <button (click)="onRemove(product)" *ngIf="basket.countOfProduct(product) > 0">Remove</button>
+      </td>
     </tr>
   </table>
 </div>
