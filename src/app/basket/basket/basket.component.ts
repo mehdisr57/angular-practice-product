@@ -11,6 +11,7 @@ export class BasketComponent {
 
   basket!: Basket;
   sum: number = 0;
+  count: number = 0;
 
   constructor(private service: BasketService) {
     this.extracted(this.service.get());
@@ -22,8 +23,10 @@ export class BasketComponent {
   private extracted(value: Basket) {
     this.basket = value;
     this.sum = 0;
+    this.count = 0;
     for (const item of value.items) {
       this.sum += item.count * item.price;
+      this.count += item.count;
     }
   }
 }
