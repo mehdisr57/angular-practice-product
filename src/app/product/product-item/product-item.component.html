@@ -12,5 +12,13 @@
         <button (click)="onRemove(product)" *ngIf="basket.countOfProduct(product) > 0">Remove</button>
       </td>
     </tr>
+    <tr>
+      <td>
+        <h3>Categories:</h3>
+        <ol>
+          <li *ngFor="let cat of categories">{{cat.name}}</li>
+        </ol>
+      </td>
+    </tr>
   </table>
 </div>

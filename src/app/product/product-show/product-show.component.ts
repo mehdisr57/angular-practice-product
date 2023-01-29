@@ -16,7 +16,7 @@ export class ProductShowComponent {
     const data = new ProductData();
     let id = route.snapshot.paramMap.get('id');
     if (id) {
-      let byId = data.getById(Number(id));
+      let byId = data.getProductById(Number(id));
       if (byId) {
         this.product = byId;
       }

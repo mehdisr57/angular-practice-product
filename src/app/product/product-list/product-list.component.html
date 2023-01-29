@@ -1,7 +1,24 @@
-<h1>Product List:</h1>
-<ol>
-  <li *ngFor="let product of products">
-    <app-product-item [product]="product"></app-product-item>
-    <a href="#" [routerLink]="['/product/item', product.id]">Visit</a>
-  </li>
-</ol>
+<table>
+  <tr>
+    <td colspan="2">
+      <h1>Product List:</h1>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align: top">
+      <ul>
+        <li *ngFor="let category of data.categories | keyvalue">
+          {{category.value.name}}<input type="checkbox" (change)="onCategoryChanged($event, category.value)"/>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ol>
+        <li *ngFor="let product of products">
+          <app-product-item [product]="product"></app-product-item>
+          <a href="#" [routerLink]="['/product/item', product.id]">Visit</a>
+        </li>
+      </ol>
+    </td>
+  </tr>
+</table>
